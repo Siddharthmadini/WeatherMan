@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/weather-default.jpg" type="image/jpg">
+  <title>WeatherMan - Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="nav-links">
+      <a href="home.html"><i class="fas fa-home"></i> Home</a>
+      <a href="index.html" class="active"><i class="fas fa-cloud"></i> Weather</a>
+      <a href="relief.html"><i class="fas fa-hands-helping"></i> Relief Centers</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+      <a href="help.html"><i class="fas fa-question-circle"></i> Help</a>
+    </div>
+  </nav>
+  <div class="weather-container">
+    <h1><i class="fas fa-cloud-sun"></i> WeatherMan</h1>
+    <div class="search-container">
+      <input type="text" id="city-input" placeholder="Enter city name">
+      <button onclick="getWeather()">Get Weather</button>
+      <button onclick="getMyLocation()" class="location-btn">
+        <i class="fas fa-location-dot"></i> My Location
+      </button>
+    </div>
+    
+    <div id="weather-info">
+      <div class="weather-icon">
+        <img src="images/weather-default.jpg" alt="Weather Icon" id="weather-icon-img">
+      </div>
+      <!-- Weather details will show up here -->
+    </div>
+
+    <div class="tabs-container">
+      <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'aqi')">
+          <i class="fas fa-wind"></i> Air Quality
+        </button>
+        <button class="tab-button" onclick="openTab(event, 'driving')">
+          <i class="fas fa-car"></i> Driving Conditions
+        </button>
+        <button class="tab-button" onclick="openTab(event, 'food')">
+          <i class="fas fa-utensils"></i> Food Suggestions
+        </button>
+        <button class="tab-button" onclick="openTab(event, 'outfit')">
+          <i class="fas fa-tshirt"></i> Outfit Suggestions
+        </button>
+        <button class="tab-button" onclick="openTab(event, 'music')">
+          <i class="fas fa-music"></i> Music Suggestions
+        </button>
+      </div>
+
+      <div id="aqi" class="tab-content active">
+        <h2><i class="fas fa-wind"></i> Air Quality Index</h2>
+        <div class="aqi-value">AQI: --</div>
+        <p>Enter a city name to see air quality data</p>
+        <div class="aqi-details">
+          <div class="aqi-scale">
+            <div class="scale-item" style="background-color: #00C853">Good</div>
+            <div class="scale-item" style="background-color: #FFD600">Fair</div>
+            <div class="scale-item" style="background-color: #FF9800">Moderate</div>
+            <div class="scale-item" style="background-color: #F44336">Poor</div>
+            <div class="scale-item" style="background-color: #9C27B0">Very Poor</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="driving" class="tab-content">
+        <h2><i class="fas fa-car"></i> Driving Conditions</h2>
+        <div class="driving-info">
+          <div class="driving-icon">
+            <img src="images/drive-thru.gif" alt="Driving Conditions">
+          </div>
+          <p>Enter a city name to see driving conditions</p>
+        </div>
+      </div>
+
+      <div id="food" class="tab-content">
+        <h2><i class="fas fa-utensils"></i> Food Suggestions</h2>
+        <div class="food-suggestions">
+          <div class="food-icon">
+            <img src="images/food.gif" alt="Food Suggestions">
+          </div>
+          <p>Enter a city name to get food suggestions based on weather</p>
+        </div>
+      </div>
+
+      <div id="outfit" class="tab-content">
+        <h2><i class="fas fa-tshirt"></i> Outfit Suggestions</h2>
+        <div class="outfit-suggestions">
+          <div class="outfit-icon">
+            <img src="images/tuxedo.gif" alt="Outfit Suggestions">
+          </div>
+          <p>Enter a city name to get outfit suggestions based on weather</p>
+        </div>
+      </div>
+
+      <div id="music" class="tab-content">
+        <h2><i class="fas fa-music"></i> Music Suggestions</h2>
+        <div class="music-suggestions">
+          <div class="weather-message">
+            Create and manage your weather-based playlists
+          </div>
+          <div class="playlist-actions">
+            <button id="create-playlist" class="playlist-btn">
+              <i class="fas fa-plus"></i> Create My Playlist
+            </button>
+            <button id="view-saved" class="playlist-btn">
+              <i class="fas fa-list"></i> View Saved Playlists
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relief Centers - WeatherMan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-links">
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            <a href="index.html"><i class="fas fa-cloud"></i> Weather</a>
+            <a href="relief.html" class="active"><i class="fas fa-hands-helping"></i> Relief Centers</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+            <a href="help.html"><i class="fas fa-question-circle"></i> Help</a>
+        </div>
+    </nav>
+
+    <div class="content-container">
+        <h1><i class="fas fa-hands-helping"></i> Nearby Relief Centers</h1>
+        
+        <div class="relief-controls">
+            <button id="get-location" class="location-btn">
+                <i class="fas fa-location-dot"></i> Use My Location
+            </button>
+            <div class="relief-filters">
+                <select id="relief-type">
+                    <option value="all">All Centers</option>
+                    <option value="flood">Flood Relief</option>
+                    <option value="rain">Rainfall Relief</option>
+                    <option value="storm">Storm Shelter</option>
+                    <option value="emergency">Emergency Shelter</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="relief-container">
+            <div id="map" class="relief-map"></div>
+            <div class="relief-list">
+                <h2>Nearby Centers</h2>
+                <div id="relief-centers" class="centers-list">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading relief centers...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="relief.js"></script>
+</body>
+</html> 
