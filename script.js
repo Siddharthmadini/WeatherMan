@@ -158,7 +158,7 @@ function updateWeatherUI(weatherData, aqiData, displayName) {
   
     const weatherInfo = `
         <div class="weather-icon">
-            <img src="images/${weatherIcon}" alt="Weather Icon" id="weather-icon-img">
+            <img src="./${weatherIcon}" alt="Weather Icon" id="weather-icon-img">
         </div>
         ${warningMessage}
         <h3>Weather in ${displayName}</h3>
